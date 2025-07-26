@@ -3,33 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ListEasy | Legal</title>
+    <title>ListEasy | Legal Tech Presence Management</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/legalbuilders/listeasy/refs/heads/main/images/favicon-32x32.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chosen Palette: Seafoam & Sky -->
-    <!-- Application Structure Plan: The application is designed as a top-to-bottom narrative landing page to guide the user from problem to solution. It starts with a strong Hero section to grab attention, followed by a "platforms covered" section to immediately build trust and show scope. A new "Factoid" panel is added to provide a data-driven reason for the service's importance. It then visualizes the problem (inconsistent listings), explains the simple 4-step process, introduces an upsell opportunity with the "Level Up" panel, and concludes with a clear pricing and sign-up call-to-action. -->
+    <!-- Application Structure Plan: The application is designed as a top-to-bottom narrative landing page to guide the user from problem to solution. It starts with a strong Hero section to grab attention, followed by a "platforms covered" section to immediately build trust and show scope. A new "Factoid" panel is added to provide a data-driven reason for the service's importance. It then visualizes the problem (inconsistent listings), explains the simple 3-step process, introduces an upsell opportunity with the "Level Up" panel, and concludes with a clear pricing and sign-up call-to-action. -->
     <!-- Visualization & Content Choices: 
         - Hero/Sub-hero: Goal: Inform/Hook. Method: Large, prominent text over an image. Justification: Immediately conveys the core value proposition with visual appeal.
-        - Logo Row: Goal: Inform/Build Trust. Method: Styled HTML placeholders in a two-column grid. Justification: Shows the breadth of the service in a structured, easy-to-scan format.
+        - Logo Row: Goal: Inform/Build Trust. Method: Styled HTML placeholders with favicons in a two-column grid. Justification: Shows the breadth of the service in a visually rich, easy-to-scan format.
         - Factoid Panel: Goal: Persuade with Data. Method: Large numbers and clear text. Justification: Uses a key statistic to create urgency and prove the need for the service.
         - Problem Visualization: Goal: Compare. Method: HTML/Tailwind diagram showing a "messy" vs. "clean" listing. Interaction: None. Justification: Visually demonstrates the pain point.
-        - How It Works: Goal: Organize/Explain. Method: Numbered, vertical timeline/process flow using HTML/Tailwind. Interaction: None. Justification: Breaks down the service into simple, digestible steps.
+        - How It Works: Goal: Organize/Explain. Method: Numbered, vertical timeline/process flow with a visual connector line. Interaction: None. Justification: Breaks down the service into simple, digestible steps.
         - Level Up Panel: Goal: Upsell/Inform. Method: A dedicated section with distinct styling. Justification: Clearly separates the core offering from the premium add-on.
         - Sign-up Form: Goal: Convert. Method: Standard HTML form. Interaction: Form submission. Justification: Provides a clear, final step for the user to take action.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <!-- NOTE: Replaced Google Drive image links with placeholders for reliable previewing. You can replace these with your own public image URLs. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F8FAFC; 
         }
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+        .font-dm-serif {
+            font-family: 'DM Serif Display', serif;
+        }
         .hero-bg-image {
-            background-image: url('https://raw.githubusercontent.com/legalbuilders/listeasy/refs/heads/main/ListEasyLegalHeroImage.png');
+            /* Replaced Google Drive URL with a placeholder for reliable previewing */
+            background-image: url('https://raw.githubusercontent.com/legalbuilders/listeasy/refs/heads/main/images/ListEasyLegalHeroImage.png');
             background-size: cover;
             background-position: center;
         }
         .signup-bg-image {
-            background-image: url('https://raw.githubusercontent.com/legalbuilders/listeasy/refs/heads/main/ListEasyLegalHeroImage.png');
+            /* Replaced Google Drive URL with a placeholder for reliable previewing */
+            background-image: url('https://raw.githubusercontent.com/legalbuilders/listeasy/refs/heads/main/images/ListEasyLegalHeroImage.png');
             background-size: cover;
             background-position: center;
         }
@@ -67,7 +75,7 @@
             border: 1px solid #E2E8F0;
             padding: 0.75rem 1.25rem;
             border-radius: 0.5rem;
-            text-align: center;
+            text-align: left;
             box-shadow: 0 1px 3px 0 rgba(0,0,0,0.07), 0 1px 2px 0 rgba(0,0,0,0.05);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -78,16 +86,35 @@
         .level-up-bg {
             background-color: #F0FDF4; /* Light Green */
         }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .step-connector::before {
+            content: '';
+            position: absolute;
+            left: calc(1.75rem - 1px); /* half of w-14 */
+            top: 1.75rem;
+            bottom: 1.75rem;
+            width: 2px;
+            background-color: #e2e8f0; /* light gray */
+            z-index: -1;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="brand-text">
 
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-2xl font-bold brand-text">ListEasy <span class="accent-text font-medium">| Legal Tech</span></h1>
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold brand-text">ListEasy <span class="accent-text font-medium">| Legal Tech</span></h1>
             <nav>
                 <button id="nav-cta" class="brand-button font-bold py-2 px-4 rounded-lg text-sm">Sign Up Now</button>
             </nav>
@@ -98,99 +125,104 @@
         <!-- Hero Section -->
         <section class="relative hero-bg-image">
             <div class="absolute inset-0 hero-overlay"></div>
-            <div class="relative container mx-auto px-6 py-24 md:py-40 text-center text-white">
-                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">Control Your Product Story, Everywhere.</h2>
-                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">We make sure your messaging is complete, compelling and consistent across your prospect's journey.</p>
-                <button id="hero-cta" class="mt-10 brand-button font-bold py-4 px-8 rounded-lg text-lg">Get Started</button>
+            <div class="relative container mx-auto px-4 sm:px-6 py-20 md:py-40 text-center text-white">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">Control Your Product Story, Everywhere</h2>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">Make your messaging complete, compelling and consistent across your prospect's journey</p>
+                <button id="hero-cta" class="mt-10 brand-button font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg text-base md:text-lg">Get Started</button>
             </div>
         </section>
 
         <!-- Logo Row Section -->
-        <section class="accent-bg py-16">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-3xl font-bold brand-text">You must be present to win.</h3>
-                <p class="mt-2 text-lg accent-text">We set up and manage your product presence everywhere legal tech buyers go.</p>
+        <section class="accent-bg py-12 md:py-16 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold brand-text">You must be present to win</h3>
+                <p class="mt-2 text-base md:text-lg accent-text">We set up and manage your <span class="text-teal-600 font-semibold">product presence</span> everywhere legal tech buyers go</p>
                 <div class="mt-10 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="logo-placeholder"><a href="https://ecosystem.theoremlegal.com/a/artificial-lawyer" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Artificial Lawyer Legal Tech Directory</a></div>
-                    <div class="logo-placeholder"><a href="https://www.capterra.com/enterprise-legal-management-software/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Capterra Legal</a></div>
-                    <div class="logo-placeholder"><a href="https://cloc.org/solutions-directory/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">CLOC Product Directory</a></div>
-                    <div class="logo-placeholder"><a href="https://www.crunchbase.com/hub/legal-tech-companies" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Crunchbase Legal Tech Hubs</a></div>
-                    <div class="logo-placeholder"><a href="https://www.g2.com/categories/legal" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">G2</a></div>
-                    <div class="logo-placeholder"><a href="https://www.globallegaltechdirectory.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Global Legal Tech Directory</a></div>
-                    <div class="logo-placeholder"><a href="https://workspace.google.com/marketplace" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Google Workspace Marketplace</a></div>
-                    <div class="logo-placeholder"><a href="https://knowledge.iltanet.org/companies" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">ILTA Product Directory</a></div>
-                    <div class="logo-placeholder"><a href="https://directory.lawnext.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">LawNext Directory</a></div>
-                    <div class="logo-placeholder"><a href="https://www.legaltechnologyhub.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Legal Tech Hub</a></div>
-                    <div class="logo-placeholder"><a href="https://www.linkedin.com/products/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">LinkedIn Product Page</a></div>
-                    <div class="logo-placeholder"><a href="https://appsource.microsoft.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Microsoft AppSource</a></div>
-                    <div class="logo-placeholder"><a href="https://techindex.law.stanford.edu/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Stanford CodeX Tech Index</a></div>
-                    <div class="logo-placeholder"><a href="https://ecosystem.theoremlegal.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Theorem Marketplace</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=theoremlegal.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://ecosystem.theoremlegal.com/a/artificial-lawyer" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Artificial Lawyer Directory</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=capterra.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://www.capterra.com/enterprise-legal-management-software/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Capterra Legal</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=cloc.org" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://cloc.org/solutions-directory/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">CLOC Product Directory</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=crunchbase.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://www.crunchbase.com/hub/legal-tech-companies" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Crunchbase Legal Tech Hubs</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=g2.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://www.g2.com/categories/legal" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">G2</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=globallegaltechdirectory.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://www.globallegaltechdirectory.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Global Legal Tech Directory</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=google.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://workspace.google.com/marketplace" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Google Workspace Marketplace</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=iltanet.org" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://knowledge.iltanet.org/companies" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">ILTA Product Directory</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=lawnext.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://directory.lawnext.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">LawNext Directory</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=legaltechnologyhub.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://www.legaltechnologyhub.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Legal Tech Hub</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=linkedin.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://www.linkedin.com/products/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">LinkedIn Product Page</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=microsoft.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://appsource.microsoft.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Microsoft AppSource</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=stanford.edu" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://techindex.law.stanford.edu/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Stanford CodeX Tech Index</a></div>
+                    <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=theoremlegal.com" alt="Favicon" class="w-5 h-5 mr-3" onerror="this.style.display='none'"><a href="https://ecosystem.theoremlegal.com/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Theorem Marketplace</a></div>
                 </div>
             </div>
         </section>
 
         <!-- Factoid Section -->
-        <section class="section-bg py-16 md:py-24">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-3xl font-bold brand-text">Where buying decisions happen</h3>
-                <p class="mt-2 text-lg accent-text max-w-3xl mx-auto">Your website is just a piece of it.</p>
+        <section class="section-bg py-12 md:py-24 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold brand-text">Where buying decisions happen</h3>
+                <p class="mt-2 text-base md:text-lg accent-text max-w-3xl mx-auto">Hint: It's not on your website</p>
                 <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
                     <div class="text-center">
-                        <p class="text-6xl md:text-7xl font-extrabold text-teal-600">45%</p>
-                        <p class="mt-2 text-xl font-semibold brand-text">Independent Research Online</p>
+                        <p class="text-5xl md:text-7xl font-extrabold text-teal-600">77%</p>
+                        <p class="mt-2 text-lg md:text-xl font-semibold brand-text">Start with Independent Research</p>
                     </div>
                     <div class="text-center">
-                        <p class="text-6xl md:text-7xl font-extrabold accent-text">17%</p>
-                        <p class="mt-2 text-xl font-semibold brand-text">Meeting With All Suppliers</p>
+                        <p class="text-5xl md:text-7xl font-extrabold accent-text">23%</p>
+                        <p class="mt-2 text-lg md:text-xl font-semibold brand-text">Contact a Vendor First</p>
                     </div>
                 </div>
                 <div class="mt-8 max-w-3xl mx-auto">
-                    <p class="mt-4 text-sm text-gray-400"><em>Source: Gartner, B2B Buying Journey Report</em></p>
+                     <p class="text-lg md:text-xl brand-text">
+                         "Buyers have all but replaced vendor-provided content<br>with more trusted sources."
+                    </p>
+                    <p class="mt-4 text-sm text-gray-400"><em>Source: TrustRadius, 2022 B2B Buying Disconnect</em></p>
                 </div>
             </div>
         </section>
 
         <!-- Problem Visualization Section -->
-        <section class="accent-bg py-16 md:py-24">
-            <div class="container mx-auto px-6">
+        <section class="accent-bg py-12 md:py-24 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
-                     <h3 class="text-4xl font-bold brand-text">From Inconsistent to Influential</h3>
-                     <p class="mt-3 text-xl accent-text max-w-2xl mx-auto">A consistent, compelling narrative builds trust and authority.</p>
+                     <h3 class="text-2xl md:text-3xl font-bold brand-text">From <span class="text-red-800">Inconsistent</span> to <span class="text-green-800">Influential</span></h3>
+                     <p class="mt-2 text-base md:text-lg accent-text max-w-2xl mx-auto">A consistent, compelling narrative builds trust and authority</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 items-stretch">
-                    <!-- Before -->
-                    <div class="p-6 rounded-lg bg-red-50 flex flex-col">
-                        <h4 class="text-xl font-semibold text-red-800 mb-4">Before: A Chaotic Journey</h4>
-                        <div class="space-y-4 flex-grow">
-                            <div class="p-4 rounded-md bg-white shadow-sm">
-                                <p class="font-semibold">Listing on Legal Tech Hub</p>
-                                <p class="text-sm text-gray-600">Outdated feature list, old logo.</p>
-                            </div>
-                            <div class="p-4 rounded-md bg-white shadow-sm">
-                                <p class="font-semibold">Profile on LawSites</p>
-                                <p class="text-sm text-gray-600">Description copied from a 2-year-old press release.</p>
-                            </div>
-                            <div class="p-4 rounded-md bg-white shadow-sm">
-                                <p class="font-semibold">LinkedIn Product Page</p>
-                                <p class="text-sm text-gray-600">No recent updates, broken link to pricing.</p>
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Before -->
+                        <div class="p-6 rounded-lg bg-red-50 flex flex-col">
+                            <h4 class="text-xl font-semibold text-red-800 mb-4">Before: A Chaotic Journey</h4>
+                            <div class="space-y-4 flex flex-col flex-grow justify-between">
+                                <div class="p-4 rounded-md bg-white shadow-sm">
+                                    <p class="font-semibold">Listing on Legal Tech Hub</p>
+                                    <p class="text-sm text-gray-600">Outdated feature list, old logo.</p>
+                                </div>
+                                <div class="p-4 rounded-md bg-white shadow-sm">
+                                    <p class="font-semibold">Profile on LawSites</p>
+                                    <p class="text-sm text-gray-600">Description copied from a 2-year-old press release.</p>
+                                </div>
+                                <div class="p-4 rounded-md bg-white shadow-sm">
+                                    <p class="font-semibold">LinkedIn Product Page</p>
+                                    <p class="text-sm text-gray-600">Never published</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- After -->
-                    <div class="p-6 rounded-lg bg-green-50 flex flex-col justify-center">
-                        <h4 class="text-xl font-semibold text-green-800 mb-6">After: A Controlled Narrative</h4>
-                         <div class="space-y-5">
-                            <div class="p-4 rounded-md bg-white shadow-sm">
-                                <p class="text-lg font-semibold text-gray-700">✓ Everywhere that matters</p>
-                            </div>
-                            <div class="p-4 rounded-md bg-white shadow-sm">
-                                <p class="text-lg font-semibold text-gray-700">✓ Compelling and consistent</p>
-                            </div>
-                            <div class="p-4 rounded-md bg-white shadow-sm">
-                                <p class="text-lg font-semibold text-gray-700">✓ Always current</p>
-                            </div>
-                             <div class="p-4 rounded-md bg-white shadow-sm">
-                                <p class="text-lg font-semibold text-gray-700">✓ Effortlessly managed</p>
+                        <!-- After -->
+                        <div class="p-6 rounded-lg bg-green-50 flex flex-col">
+                            <h4 class="text-xl font-semibold text-green-800 mb-4">After: A Controlled Narrative</h4>
+                             <div class="space-y-4 flex flex-col flex-grow justify-between">
+                                <div class="p-4 rounded-md bg-white shadow-sm">
+                                    <p class="text-base font-semibold text-gray-700"><span class="text-green-800 font-bold">✓</span> Everywhere that matters</p>
+                                </div>
+                                <div class="p-4 rounded-md bg-white shadow-sm">
+                                    <p class="text-base font-semibold text-gray-700"><span class="text-green-800 font-bold">✓</span> Compelling and consistent</p>
+                                </div>
+                                <div class="p-4 rounded-md bg-white shadow-sm">
+                                    <p class="text-base font-semibold text-gray-700"><span class="text-green-800 font-bold">✓</span> Always current</p>
+                                </div>
+                                 <div class="p-4 rounded-md bg-white shadow-sm">
+                                    <p class="text-base font-semibold text-gray-700"><span class="text-green-800 font-bold">✓</span> Effortlessly managed</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -199,18 +231,18 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="section-bg py-16 md:py-24">
-            <div class="container mx-auto px-6">
+        <section class="section-bg py-12 md:py-24 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
-                    <h3 class="text-3xl font-bold brand-text">Turn-key presence management</h3>
-                    <p class="mt-2 text-lg accent-text">Go from scattered to streamlined in 4 simple steps.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold brand-text">Turn-key presence management</h3>
+                    <p class="mt-2 text-base md:text-lg accent-text">Go from scattered to streamlined in 3 simple steps</p>
                 </div>
                 <div class="max-w-2xl mx-auto">
-                    <div class="relative">
+                    <div class="relative step-connector">
                         <!-- Step 1 -->
-                        <div class="flex items-start mb-12">
+                        <div class="flex items-center mb-12">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full step-circle flex items-center justify-center font-bold text-xl">1</div>
+                                <div class="w-14 h-14 rounded-full step-circle flex items-center justify-center font-bold text-2xl">1</div>
                             </div>
                             <div class="ml-6">
                                 <h4 class="text-xl font-bold brand-text">Onboard</h4>
@@ -218,29 +250,19 @@
                             </div>
                         </div>
                         <!-- Step 2 -->
-                        <div class="flex items-start mb-12">
+                        <div class="flex items-center mb-12">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full step-circle flex items-center justify-center font-bold text-xl">2</div>
-                            </div>
-                            <div class="ml-6">
-                                <h4 class="text-xl font-bold brand-text">Prepare</h4>
-                                <p class="mt-1 accent-text">Our team gets to work, creating consistent and compelling copy to go with your collateral.</p>
-                            </div>
-                        </div>
-                        <!-- Step 3 -->
-                        <div class="flex items-start mb-12">
-                            <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full step-circle flex items-center justify-center font-bold text-xl">3</div>
+                                <div class="w-14 h-14 rounded-full step-circle flex items-center justify-center font-bold text-2xl">2</div>
                             </div>
                             <div class="ml-6">
                                 <h4 class="text-xl font-bold brand-text">Publish</h4>
-                                <p class="mt-1 accent-text">With your approval, we publish your optimized product information in all the right places.</p>
+                                <p class="mt-1 accent-text">Our team gets to work, creating consistent and compelling copy to go with your collateral. We publish with your approval.</p>
                             </div>
                         </div>
-                        <!-- Step 4 -->
-                        <div class="flex items-start">
+                        <!-- Step 3 -->
+                        <div class="flex items-center">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full step-circle flex items-center justify-center font-bold text-xl">4</div>
+                                <div class="w-14 h-14 rounded-full step-circle flex items-center justify-center font-bold text-2xl">3</div>
                             </div>
                             <div class="ml-6">
                                 <h4 class="text-xl font-bold brand-text">Monitor and Maintain</h4>
@@ -253,19 +275,19 @@
         </section>
 
         <!-- Level Up Section -->
-        <section class="accent-bg py-16 md:py-24">
-            <div class="container mx-auto px-6 text-center">
-                <h3 class="text-3xl font-bold brand-text">Level up with an expert touch</h3>
-                <p class="mt-4 text-lg max-w-3xl mx-auto accent-text">For vendors seeking a world-class presence, our experts can design and execute your messaging plan with custom-created collateral, including video, imagery, and case studies.</p>
+        <section class="accent-bg py-12 md:py-24 fade-in-section">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h3 class="text-2xl md:text-3xl font-bold brand-text">Human powered, AI-assisted</h3>
+                <p class="mt-4 text-base md:text-lg max-w-3xl mx-auto accent-text">Every submission is human reviewed and improved by our team. AI helps us scale. With our expert package, we can also custom-create world-class collateral including video, imagery and case studies.</p>
             </div>
         </section>
 
         <!-- Sign Up Section -->
         <section id="signup-section" class="relative signup-bg-image py-16 md:py-24">
             <div class="absolute inset-0 bg-gray-800/70"></div>
-            <div class="relative container mx-auto px-6">
+            <div class="relative container mx-auto px-4 sm:px-6">
                 <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl">
-                    <h3 class="text-3xl font-bold brand-text text-center">Sign Up & Take Control</h3>
+                    <h3 class="text-3xl font-bold brand-text text-center">Take Control Now</h3>
                     <p class="text-center mt-2 accent-text"><span class="font-bold text-2xl brand-text">$89/month</span> billed annually</p>
                     <form id="signup-form" class="mt-8 space-y-6">
                         <div>
@@ -286,7 +308,7 @@
                         </div>
                         <div>
                             <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium brand-button">
-                                Sign Up & Upgrade Your Listings
+                                Get started
                             </button>
                         </div>
                     </form>
@@ -296,8 +318,18 @@
         </section>
     </main>
 
-    <footer class="section-bg py-8">
-        <div class="container mx-auto px-6 text-center accent-text text-sm">
+    <section class="section-bg py-10">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <p class="text-sm accent-text uppercase tracking-widest">A service of</p>
+            <a href="https://legal.builders" target="_blank" rel="noopener noreferrer">
+                <!-- Replaced Google Drive URL with a placeholder for reliable previewing -->
+                <img src="https://placehold.co/200x40/1E293B/FFFFFF?text=LEGAL.BUILDERS" alt="LEGAL.BUILDERS Logo" class="h-8 md:h-10 mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x40/1E293B/FFFFFF?text=Logo+Not+Found';">
+            </a>
+        </div>
+    </section>
+
+    <footer class="section-bg py-8 border-t border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 text-center accent-text text-sm">
             <p>&copy; 2025 Legal Builders LLC. All rights reserved.</p>
         </div>
     </footer>
@@ -319,7 +351,6 @@
             // --- Form submission logic ---
             const form = document.getElementById('signup-form');
             const formMessage = document.getElementById('form-message');
-            // This is a placeholder URL. Replace with your actual Google Apps Script URL.
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxewtGdjkd0X5QXURY1a4lBvs80SyS0RlKWU_yzmIsLynAtlmACI8m1dpmcymKc5Ycp/exec';
     
             form.addEventListener('submit', function(e) {
@@ -333,17 +364,37 @@
                         formMessage.textContent = 'Thank you for your interest! We will be in touch shortly.';
                         formMessage.className = 'mt-4 text-center text-green-600';
                         submitButton.disabled = false;
-                        submitButton.textContent = 'Sign Up & Upgrade Your Listings';
+                        submitButton.textContent = 'Get started';
                         form.reset();
                     })
                     .catch(error => {
-                        formMessage.textContent = 'Thank you for your interest! We will be in touch shortly.';
-                        formMessage.className = 'mt-4 text-center text-green-600';
+                        formMessage.textContent = 'Error! Could not submit form. Please try again.';
+                        formMessage.className = 'mt-4 text-center text-red-600';
                         submitButton.disabled = false;
-                        submitButton.textContent = 'Sign Up & Upgrade Your Listings';
-                        form.reset();
-                        console.error('Form submission simulation successful (catch block). Error:', error.message);
+                        submitButton.textContent = 'Get started';
+                        console.error('Error!', error.message);
                     });
+            });
+
+            // --- Scroll Animation Logic ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
