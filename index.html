@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ListEasy | Legal Tech Presence Management</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chosen Palette: Seafoam & Sky -->
     <!-- Application Structure Plan: The application is designed as a top-to-bottom narrative landing page to guide the user from problem to solution. It starts with a strong Hero section to grab attention, followed by a "platforms covered" section to immediately build trust and show scope. A new "Factoid" panel is added to provide a data-driven reason for the service's importance. It then visualizes the problem (inconsistent listings), explains the simple 3-step process, introduces an upsell opportunity with the "Level Up" panel, and concludes with a clear pricing and sign-up call-to-action. -->
     <!-- Visualization & Content Choices: 
-        - Hero/Sub-hero: Goal: Inform/Hook. Method: Large, prominent text over an image. Justification: Immediately conveys the core value proposition with visual appeal.
+        - Hero/Sub-hero: Goal: Inform/Hook. Method: Large, prominent text over a video background. Justification: Immediately conveys the core value proposition with dynamic visual appeal.
         - Logo Row: Goal: Inform/Build Trust. Method: Styled HTML placeholders with favicons in a two-column grid. Justification: Shows the breadth of the service in a visually rich, easy-to-scan format.
         - Factoid Panel: Goal: Persuade with Data. Method: Large numbers and clear text. Justification: Uses a key statistic to create urgency and prove the need for the service.
         - Problem Visualization: Goal: Compare. Method: HTML/Tailwind diagram showing a "messy" vs. "clean" listing. Interaction: None. Justification: Visually demonstrates the pain point.
@@ -28,18 +29,10 @@
         .font-dm-serif {
             font-family: 'DM Serif Display', serif;
         }
-        .hero-bg-image {
-            background-image: url('https://raw.githubusercontent.com/legalbuilders/listeasy/main/images/ListEasyLegalHeroImage.png');
-            background-size: cover;
-            background-position: center;
-        }
         .signup-bg-image {
             background-image: url('https://raw.githubusercontent.com/legalbuilders/listeasy/main/images/ListEasyLegalHeroImage.png');
             background-size: cover;
             background-position: center;
-        }
-        .hero-overlay {
-            background-color: rgba(0, 0, 0, 0.5);
         }
         .section-bg {
             background-color: #FFFFFF;
@@ -122,9 +115,13 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative hero-bg-image">
-            <div class="absolute inset-0 hero-overlay"></div>
-            <div class="relative container mx-auto px-4 sm:px-6 py-20 md:py-40 text-center text-white">
+        <section class="relative overflow-hidden">
+            <video autoplay muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                <source src="https://raw.githubusercontent.com/legalbuilders/listeasy/main/images/Water_Ripple_Video_Generation_Request.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+            <div class="relative container mx-auto px-4 sm:px-6 py-20 md:py-40 text-center text-white z-20">
                 <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">Control Your Product Story, Everywhere</h2>
                 <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-200">Make your messaging complete, compelling and consistent across your prospect's journey</p>
                 <button id="hero-cta" class="mt-10 brand-button font-bold py-3 px-6 md:py-4 md:px-8 rounded-lg text-base md:text-lg">Get Started</button>
@@ -301,6 +298,14 @@
                         <div>
                             <label for="website" class="block text-sm font-medium text-gray-700">Product Website URL</label>
                             <input type="text" id="website" name="website" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-teal-500 focus:border-teal-500 sm:text-sm">
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="expert" name="expertInterest" type="checkbox" class="focus:ring-teal-500 h-4 w-4 text-teal-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="expert" class="font-medium text-gray-700">I'm interested in an expert package.</label>
+                            </div>
                         </div>
                         <div>
                             <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium brand-button">
