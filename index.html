@@ -9,7 +9,7 @@
     <!-- Application Structure Plan: The application is designed as a top-to-bottom narrative landing page to guide the user from problem to solution. It starts with a strong Hero section to grab attention, followed by a "platforms covered" section to immediately build trust and show scope. A new "Factoid" panel is added to provide a data-driven reason for the service's importance. It then visualizes the problem (inconsistent listings), explains the simple 3-step process, introduces an upsell opportunity with the "Level Up" panel, and concludes with a clear pricing and sign-up call-to-action. -->
     <!-- Visualization & Content Choices: 
         - Hero/Sub-hero: Goal: Inform/Hook. Method: Large, prominent text over an image. Justification: Immediately conveys the core value proposition with visual appeal.
-        - Logo Row: Goal: Inform/Build Trust. Method: Styled HTML placeholders with favicons in a two-column grid. Justification: Shows the breadth of the service in a visually rich, easy-to-scan format.
+        - Logo Row: Goal: Inform/Build Trust. Method: Styled HTML placeholders with favicons in a three-column grid. Justification: Shows the breadth of the service in a visually rich, easy-to-scan format.
         - Factoid Panel: Goal: Persuade with Data. Method: Large numbers and clear text. Justification: Uses a key statistic to create urgency and prove the need for the service.
         - Problem Visualization: Goal: Compare. Method: HTML/Tailwind diagram showing a "messy" vs. "clean" listing. Interaction: None. Justification: Visually demonstrates the pain point.
         - How It Works: Goal: Organize/Explain. Method: Numbered, vertical timeline/process flow with a visual connector line. Interaction: None. Justification: Breaks down the service into simple, digestible steps.
@@ -21,12 +21,6 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F8FAFC; 
-        }
-        .font-roboto {
-            font-family: 'Roboto', sans-serif;
-        }
-        .font-dm-serif {
-            font-family: 'DM Serif Display', serif;
         }
         .hero-bg-image {
             background-image: url('https://raw.githubusercontent.com/legalbuilders/listeasy/main/images/ListEasyLegalHeroImage.png');
@@ -75,6 +69,7 @@
             text-align: left;
             box-shadow: 0 1px 3px 0 rgba(0,0,0,0.07), 0 1px 2px 0 rgba(0,0,0,0.05);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            flex: 1 1 300px;
         }
         .logo-placeholder:hover {
             transform: translateY(-2px);
@@ -111,7 +106,9 @@
 
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
         <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold brand-text">ListEasy <span class="accent-text font-medium">| Legal Tech</span></h1>
+            <h1 class="text-xl md:text-2xl font-bold">
+                <span class="text-teal-600">ListEasy</span> <span class="accent-text font-medium">| Legal Tech</span>
+            </h1>
             <nav>
                 <button id="nav-cta" class="brand-button font-bold py-2 px-4 rounded-lg text-sm">Sign Up Now</button>
             </nav>
@@ -132,9 +129,9 @@
         <!-- Logo Row Section -->
         <section class="accent-bg py-12 md:py-16 fade-in-section">
             <div class="container mx-auto px-4 sm:px-6 text-center">
-                <h3 class="text-2xl md:text-3xl font-bold brand-text">You must be present to win</h3>
-                <p class="mt-2 text-base md:text-lg accent-text">We set up and manage your <span class="text-teal-600 font-semibold">product presence</span> everywhere legal tech buyers go</p>
-                <div class="mt-10 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+                <h3 class="text-3xl md:text-4xl font-bold brand-text">You must be present to win</h3>
+                <p class="mt-2 text-lg accent-text">We set up and manage your <span class="text-teal-600 font-semibold">product presence</span> everywhere legal tech buyers go</p>
+                <div class="mt-10 max-w-6xl mx-auto flex flex-wrap justify-center gap-4">
                     <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=theoremlegal.com" alt="Favicon" class="w-5 h-5 mr-3"><a href="https://ecosystem.theoremlegal.com/a/artificial-lawyer" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Artificial Lawyer Directory</a></div>
                     <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=capterra.com" alt="Favicon" class="w-5 h-5 mr-3"><a href="https://www.capterra.com/enterprise-legal-management-software/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">Capterra Legal</a></div>
                     <div class="logo-placeholder flex items-center"><img src="https://www.google.com/s2/favicons?domain=cloc.org" alt="Favicon" class="w-5 h-5 mr-3"><a href="https://cloc.org/solutions-directory/" target="_blank" rel="noopener noreferrer" class="hover:text-teal-600 transition-colors">CLOC Product Directory</a></div>
@@ -156,8 +153,8 @@
         <!-- Factoid Section -->
         <section class="section-bg py-12 md:py-24 fade-in-section">
             <div class="container mx-auto px-4 sm:px-6 text-center">
-                <h3 class="text-2xl md:text-3xl font-bold brand-text">Where buying decisions happen</h3>
-                <p class="mt-2 text-base md:text-lg accent-text max-w-3xl mx-auto">Hint: It's not on your website</p>
+                <h3 class="text-3xl md:text-4xl font-bold brand-text">Where buying decisions happen</h3>
+                <p class="mt-2 text-lg accent-text max-w-3xl mx-auto">Hint: It's not on your website</p>
                 <div class="mt-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
                     <div class="text-center">
                         <p class="text-5xl md:text-7xl font-extrabold text-teal-600">77%</p>
@@ -169,9 +166,6 @@
                     </div>
                 </div>
                 <div class="mt-8 max-w-3xl mx-auto">
-                     <p class="text-lg md:text-xl brand-text">
-                        "Buyers have all but replaced vendor-provided content<br>with more trusted sources."
-                    </p>
                     <p class="mt-4 text-sm text-gray-400"><em>Source: TrustRadius, 2022 B2B Buying Disconnect</em></p>
                 </div>
             </div>
@@ -181,8 +175,8 @@
         <section class="accent-bg py-12 md:py-24 fade-in-section">
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
-                     <h3 class="text-2xl md:text-3xl font-bold brand-text">From <span class="text-red-800">Inconsistent</span> to <span class="text-green-800">Influential</span></h3>
-                     <p class="mt-2 text-base md:text-lg accent-text max-w-2xl mx-auto">A consistent, compelling narrative builds trust and authority</p>
+                     <h3 class="text-3xl md:text-4xl font-bold brand-text">From <span class="text-red-800">Inconsistent</span> to <span class="text-green-800">Influential</span></h3>
+                     <p class="mt-2 text-lg accent-text max-w-2xl mx-auto">A consistent, compelling narrative builds trust and authority</p>
                 </div>
                 <div class="max-w-5xl mx-auto">
                     <div class="grid md:grid-cols-2 gap-8">
@@ -231,8 +225,8 @@
         <section class="section-bg py-12 md:py-24 fade-in-section">
             <div class="container mx-auto px-4 sm:px-6">
                 <div class="text-center mb-12">
-                    <h3 class="text-2xl md:text-3xl font-bold brand-text">Turn-key presence management</h3>
-                    <p class="mt-2 text-base md:text-lg accent-text">Go from scattered to streamlined in 3 simple steps</p>
+                    <h3 class="text-3xl md:text-4xl font-bold brand-text">Turn-key presence management</h3>
+                    <p class="mt-2 text-lg accent-text">Go from scattered to streamlined in 3 simple steps</p>
                 </div>
                 <div class="max-w-2xl mx-auto">
                     <div class="relative step-connector">
@@ -274,8 +268,8 @@
         <!-- Level Up Section -->
         <section class="accent-bg py-12 md:py-24 fade-in-section">
             <div class="container mx-auto px-4 sm:px-6 text-center">
-                <h3 class="text-2xl md:text-3xl font-bold brand-text">Human powered, AI-assisted</h3>
-                <p class="mt-4 text-base md:text-lg max-w-3xl mx-auto accent-text">Every submission is human reviewed and improved by our team. AI helps us scale. With our expert package, we can also custom-create world-class collateral including video, imagery and case studies.</p>
+                <h3 class="text-3xl md:text-4xl font-bold brand-text">Human powered, AI-assisted</h3>
+                <p class="mt-4 text-lg max-w-3xl mx-auto accent-text">Every submission is human reviewed and improved by our team.<br>With our expert package, we can also custom-create world-class collateral including video, imagery and case studies.</p>
             </div>
         </section>
 
